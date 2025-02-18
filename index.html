@@ -13,6 +13,21 @@
     <script>src="python.js"</script>
     <link rel="stylesheet" href="dracula.css">
     <script src="closebrackets.js"></script>
+    <style>
+      /* styles.css */
+      body {
+          background-color: #f0f0f0;
+      }
+      
+      .transition-image {
+          opacity: 0; /* Start hidden */
+          transition: opacity 2s ease-in; /* Transition effect */
+      }
+      
+      .transition-image.loaded {
+          opacity: 1; /* Fully visible when loaded */
+      }
+      </style>
 </head>
 
 <body>
@@ -72,6 +87,10 @@
         editor.setOption("mode","text/x-c++src")
       }
     })
+    window.onload = function() {
+    const img = document.querySelector('.transition-image');
+    img.classList.add('loaded'); // Add class to trigger transition
+};
 </script>
 
 </html>
